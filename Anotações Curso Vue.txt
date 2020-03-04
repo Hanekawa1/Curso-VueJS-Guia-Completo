@@ -1,0 +1,57 @@
+Anotações Curso VueJS
+
+DOM = Document Object Model
+
+Interpolação(ou Double Mustache): exemplo {{ titulo }}
+	Transcrição de elementos da aplicação Vue para o html
+	
+Diretiva: propriedade personalizada do html [exemplo: v-on]
+
+O uso de variáveis/atributos dentro da instância do Vue só acontece por meio do this
+Fora da instância do Vue, como por exemplo no html, não é necessário o uso do this.
+
+-> 	v-bind:propriedade -> Faz a ligação entre algo que está na instância do Vue e o atributo 
+	dentro de uma tag no html.
+
+-> 	v-once -> Renderiza um elemento apenas uma vez para evitar atualização do elemento ao longo
+	do script.
+
+-> 	v-html="atributo" -> Permite a renderização de html puro armazenado em um atributo.
+
+-> 	v-on:evento -> Permite escutar(listen) determinado evento na DOM. Semelhante ao $("#teste").on("click");
+
+-> 	v-model -> 	Permite o two way data binding, ou seja, a alteração impacta tanto no vue quanto na view
+
+->	v-if -> Renderização condicional
+
+-> 	v-else -> Funciona como um else comum, detalhe que necessita ser implementado um elemento após o elemento com v-if.
+
+-> 	v-else-if -> Mesmo funcionamento do v-else
+
+->	v-show -> Funciona como uma renderização condicional, mas ao contrário do v-if que retira o elemento da tela, o v-show
+	apenas oculta o elemento adicionando um estilo css ao mesmo.
+
+->	v-for -> Utilizado para renderização de listas.
+
+-> 	:key -> Utilizado como um rastreador para alterações em listas e arrays.
+
+event modifiers: Permte que os eventos sejam modificados diretamente na diretiva sem precisar de função para a modificação
+exemplo: v-on:click.prevent = event.preventDefault();
+
+Arrow functions referenciam a instância Vue por meio do this, functions normais não
+
+Em caso de envio de evento como parâmetro para funções, é necessário passar o evento com '$event' como parâmetro.
+
+A renderização condicional feita por meio do v-if (v-else, v-else-if) não apenas oculta o elemento de acordo com a condição, 
+mas sim retira o elemento do documento e o torna inacessível.
+
+O template permite a renderização de elementos sem um elemento "pai" na renderização condicional, ou seja, em situações
+normais seria o uso de uma div encapsulando os elementos a serem renderizados, adicionando o elemento div no documento.
+Com o template, o comportamento é o mesmo, porém, o elemento template não é adicionado ao documento, deixando assim 
+os elementos filhos independentes na estrutura do documento.
+
+A renderização feita com template e v-for permite que apenas os elementos dentro do template sejam repetidos, ou seja,
+o elemento template não será repetido juntamente na iteração(já que o elemento template não é inserido).
+
+Números literais podem ser iterados normalmente,
+
