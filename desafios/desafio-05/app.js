@@ -11,6 +11,8 @@ new Vue({
 			id: 10,
 			nome: 'Maria',
 			notas: [7.67, 8.33, 6.98, 9.21]
-		}
+		},
+		alternar: true,
+		nums: [1, 2, 3, 4, 5, 6, 7]
 	}
 });
